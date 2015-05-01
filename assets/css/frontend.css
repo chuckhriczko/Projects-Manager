@@ -1,0 +1,392 @@
+.project-manager-container {
+ min-height: 1px;
+	position: relative;
+	width: 100%;
+	z-index: 9999;
+}
+.project-manager-container ul {
+ list-style-type: none;
+ overflow: visible;
+ position: static;
+}
+.project-manager-container.project-manager-small ul { position: static; }
+.project-manager-container li {
+	float: left;
+	margin: 0 22px 22px 0;
+}
+.project-manager-container.project-manager-small li {
+	margin: 0 22px 22px 0;
+}
+.project-manager-container li a {
+	display: block;
+	overflow: hidden;
+	position: relative;
+}
+.project-manager-container li a img {
+	border: 1px #ccc solid;
+}
+/* Sliding Alt Animation */
+/*.project-manager-container li a span{
+				background: #999;
+    bottom: 2px;
+    color: #000;
+    font-size: 18px;
+    font-weight: bold;
+    height: 0;
+    left: 0;
+				opacity: 0.5;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    z-index: 9999;
+				
+				transition: height .35s ease-in-out;
+    -moz-transition: height .35s ease-in-out;
+    -webkit-transition: height .35s ease-in-out;
+}
+.project-manager-container li a:hover span{ height: 60px; }
+.project-manager-container li a span span{
+				background: transparent;
+    left: 7px;
+				opacity: 1;
+    position: absolute;
+    top: 20px;
+}
+.project-manager-container li a:hover span span{ height: auto; }*/
+
+/* Flip Animation */
+.project-manager-container li, .project-manager-container li .project-manager-card, .project-manager-container li .project-manager-card a {
+	height: 198px;
+	width: 298px;
+}
+.project-manager-container.project-manager-small li, .project-manager-container.project-manager-small li .project-manager-card, .project-manager-container.project-manager-small li .project-manager-card a {
+	height: 104px;
+	width: 104px;
+}
+.project-manager-container li {
+	position: relative;
+}
+.project-manager-container li .project-manager-card {
+        border: 1px #ccc solid;
+	height: 100%;
+	position: relative;
+	width: 100%;
+}
+.project-manager-container li .project-manager-card.project-manager-transition-flip {
+	transform-style: preserve-3d;
+	transition: transform 1s;
+}
+.project-manager-container.project-manager-small li .project-manager-card {
+	transition: all 0 ease 0;
+}
+.project-manager-container li:hover .project-manager-card.project-manager-transition-flip {
+	transform: perspective(1000px) rotateY(180deg);
+}
+.project-manager-container.project-manager-small li:hover .project-manager-card {
+	transform: none;
+}
+.project-manager-container li .project-manager-card a {
+	backface-visibility: hidden;
+	display: block;
+	height: 100%;
+	position: absolute;
+	width: 100%;
+}
+.project-manager-container li .project-manager-card.project-manager-transition-fade a {
+	left: 0;
+	position: absolute;
+	opacity: 1;
+	transition: opacity .5s ease-in-out;
+}
+.project-manager-container li .project-manager-card a.project-manager-front {
+	backface-visibility: hidden;
+}
+.project-manager-container li .project-manager-card a.project-manager-front div.project-manager-image-container {
+				display: inline-block;
+				height: 198px;
+				margin: 0 auto;
+				width: 298px;
+}
+.project-manager-container li .project-manager-card a.project-manager-front div.project-manager-image{
+				background-color: #fff;
+				background-position: center center;
+				background-repeat: no-repeat;
+				background-size: contain;
+				height: 70%;
+    margin: 30px auto 0;
+    width: 70%;
+}
+.project-manager-container li .project-manager-card.project-manager-transition-fade a.project-manager-front {
+	z-index: 9999;
+}
+.project-manager-container li .project-manager-card.project-manager-transition-flip a.project-manager-back {
+	backface-visibility: hidden;
+	background: #fff;
+	border: 1px #ccc solid;
+	transform: perspective(1000px) rotateY(180deg);
+}
+.project-manager-container li:hover .project-manager-card a.project-manager-front {
+	backface-visibility: hidden;
+}
+.project-manager-container li:hover .project-manager-card.project-manager-transition-fade a.project-manager-front {
+	opacity: 0;
+}
+.project-manager-container li:hover .project-manager-card a.project-manager-back {
+	backface-visibility: hidden;
+}
+.project-manager-container li .project-manager-card a.project-manager-back img {
+	margin: 15px 0 0 43px;
+}
+.project-manager-container li .project-manager-card a.project-manager-back span {
+	background: rgba(204, 204, 204, 0.9);
+	bottom: 0;
+	color: #000;
+	font-size: 18px;
+	font-weight: bold;
+	height: 60px;
+	left: 0;
+	opacity: 0;
+	position: absolute;
+	text-align: center;
+	transition: opacity .5s ease-in-out;
+	width: 100%;
+	z-index: 9999;
+}
+.project-manager-container li:hover .project-manager-card a.project-manager-back span {
+	opacity: 1;
+}
+.project-manager-container li .project-manager-card a.project-manager-back span span {
+	background: transparent;
+	left: 0;
+ opacity: 0;
+ padding: 18px 0 0;
+ position: absolute;
+ top: 0;
+	transition: opacity .5s ease-in-out;
+}
+.project-manager-container li:hover .project-manager-card a.project-manager-back span span {
+				opacity: 1;
+}
+/* Project Detail Pages */
+.project-detail-container h2 {
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+}
+/* Project Manager Scroller */
+.project-manager-scroller {
+	background: #f47b20;
+	height: 0;
+	overflow: hidden;
+	position: absolute;
+	top: 205px;
+	width: 0;
+	z-index: 9999;
+}
+.project-manager-scroller-content {
+ background: #fff;
+	height: 825px;
+	opacity: 1;
+	/*padding: 5px 0 0;*/
+	position: relative;
+}
+.project-manager-scroller-content * {
+	opacity: 1;
+}
+.project-manager-scroller-content .project-manager-scroller-content-body {
+	margin: 0 auto;
+	min-height: 550px;
+	position: relative;
+	width: 960px;
+}
+.page-our-work .project-manager-scroller-content .project-manager-scroller-content-body {
+	margin: 0 auto;
+	padding: 0 10px 0 80px;
+	width: 900px;
+}
+.project-manager-scroller-content ul {
+	list-style-type: none;
+	overflow: hidden;
+}
+/* Homepage grid white background behind thumbs*/
+.project-manager-container li, .project-manager-container li .project-manager-card, .project-manager-container li .project-manager-card a { background-color: #fff; }
+.project-manager-scroller-logo {
+	margin: 0 auto;
+	padding:20px;
+}
+.project-manager-front img {
+	margin-left: 0 auto;
+	margin-right: 0 auto;
+	background-height:100%;
+}
+/* Single project */
+.single-project .bx-wrapper .bx-viewport {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+}
+.single-project .project-manager-scroller-content {
+        height: auto;
+}
+.single-project .project-manager-scroller-content .project-card {
+        width: 66px;
+        height: 66px;
+        position: relative;
+        clear:both;
+        float: left;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        padding: 10px;
+        border: 1px solid transparent;
+}
+.single-project .project-manager-scroller-content .project-card:hover {
+        border: 1px solid #f47b20;
+}
+.single-project .project-manager-scroller-content .project-card img {
+        width: 100%;
+        height: auto;
+}
+
+/* double slider */
+
+div.project-slider-double-wrapper {
+        height: auto;
+        left: auto !important;
+        position: relative;
+    }
+    div.project-slider-double-wrapper div.bx-wrapper {
+        float: left !important;
+        max-width: 91% !important;
+        margin: 0 auto;
+    }
+    
+    div.project-slider-double-wrapper div.bx-wrapper .bx-viewport {
+        float: left !important;
+        margin: 0 auto !important;
+    }
+    div.project-slider-double-wrapper .arrow-prev {
+        float: left !important;
+        clear: both !important;
+        margin-top: 8%;
+        margin-right: 25px;
+    }
+    div.project-slider-double-wrapper .arrow-next {
+        float: left !important;
+        margin-top: 8%;
+        margin-left: 10px;
+    }
+
+@media only screen /* Tablets up to 1024px */
+and (max-device-width: 1024px)
+and (min-device-width: 768px) {
+    .project-manager-container {
+        width: 100%;
+    }
+    .project-manager-container ul {
+        width: 100%;
+    }
+    .project-manager-container li {
+	height: 198px;
+	width: 29.8%;
+        margin: 1.75%;
+    }
+    .project-manager-container li .project-manager-card {
+        width: 100%;
+        height: 198px;
+    }
+    .project-manager-container li .project-manager-card a {
+        
+    }
+    .project-manager-container li .project-manager-card a.project-manager-front div.project-manager-image-container {
+        width: 100%;
+    }
+    
+}
+
+@media only screen /* General Smartphones */ 
+and (max-width : 767px){
+    div.project-manager-container ul {
+        position: static;
+    }
+    .project-manager-container.project-manager-small {
+        width: 100% !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    .project-manager-container.project-manager-small li {
+        clear: none;
+        width: 44% !important;
+        margin: 0 3% 22px 3%;
+    }
+    .project-manager-container.project-manager-small li div.project-manager-card {
+        margin: 0 auto;
+    }
+    .project-manager-scroller {
+        position: fixed !important;
+        top: 0% !important;
+    }
+    .project-manager-scroller-content {
+        height: auto !important;
+    }
+    .project-manager-scroller-content .project-manager-scroller-content-body {
+        width: 100% !important;
+        padding: 0 0 0 0 !important;
+        margin-left: 0 !important;
+    }
+    .project-manager-scroller-content .icon-arrow a img {
+        max-height: 40px;
+        
+    }
+    .project-manager-scroller-content .arrow-prev {
+        position: fixed !important;
+        left: 1.5% !important;
+        top: 50% !important;
+    }
+    .project-manager-scroller-content .arrow-next {
+        position: fixed !important;
+        right: 1.5% !important;
+        top: 50% !important;
+    }
+    .close-x-container {
+        position: fixed !important;
+        right:  10% !important;
+        bottom: 6% !important;
+    }
+    .project-manager-scroller-content .project-manager-scroller-list-container {
+        width: 85% !important;
+        margin: 0 auto !important;
+    }
+    .bx-wrapper .bx-viewport {
+        width: 100% important;
+        border: none !important;
+        left: 0 !important;
+    }
+    
+    .bx-wrapper img {
+        max-width: 85%;
+    }
+    div.bx-wrapper div.bx-viewport ul li {
+        width: 100%;
+    }
+    div.bx-wrapper div.bx-viewport ul li a:last-of-type { /*only the main image not the logo */
+        max-width: 100% !important;
+    }
+    
+    div.project-slider-double-wrapper div.bx-wrapper {
+        max-width: 70% !important;
+    }
+    div.project-slider-double-wrapper .arrow-prev {
+        margin-top: 86px !important;
+        margin-left: 5% !important;
+    }
+    div.project-slider-double-wrapper .arrow-next {
+        margin-top: 86px !important;
+    }
+    
+    .project-detail-container .project-detail-text {
+        max-width: 80% !important;
+        border: none !important;
+        padding: 0 !important;
+        margin: 0 auto !important;
+    }
+}
