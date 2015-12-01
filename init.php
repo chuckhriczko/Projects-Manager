@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: Projects Manager
-Plugin URI: http://www.objectunoriented.com/projects/projects-manager
+Plugin URI: http://www.relativelystatic.com/code/projects-manager
 Description: Allows adding and managing of projects to a Wordpress website
 Version: 1.0
 Author: Charles Hriczko
-Author URI: http://www.objectunoriented.com
+Author URI: http://www.relativelystatic.com
 License: GPLv2
 */
 require_once('lib/constants.php');
